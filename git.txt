@@ -1,0 +1,4 @@
+git status   //获取文件的状态（未追踪，未改动，已改动，暂存等）
+git diff <file>    //查看file文件改动
+git add <file>    //追踪file（将file存入暂存区）
+
