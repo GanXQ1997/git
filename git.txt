@@ -1,4 +1,11 @@
-git status   //获取文件的状态（未追踪，未改动，已改动，暂存等）
-git diff <file>    //查看file文件改动
-git add <file>    //追踪file（将file存入暂存区）
+git status             //获取文件的状态（未追踪，已改动，暂存等）（-s 简介显示）
+git diff <file>      //查看file文件具体改动（git difftool切换比较软件）
+git add <file>     //追踪file（将file存入暂存区）
+//可以创建一个名为 .gitignore 的文件，列出要忽略的文件
+git config            //修改默认配置
+git commit -m <"remarks">       //将暂存区文件提交到仓库（-a 工作区跳过暂存区提交）
+git rm <file>      //记录移除文件操作（-f 强制删除）
+git mv <old_file> <new_file>    //移动/重命名文件（相当于mv old_file new_file&&git rm old_file &&git add new_file)
 
+
+http://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2
