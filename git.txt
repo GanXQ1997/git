@@ -29,5 +29,18 @@ git remote add <name> <url>       //给url添加简写
                                    （https://github.com/ganxq1997/temp）
 git remote rename <oldname> <newname>   //将远程仓库oldname重命名为newname
 git remote rm <name>              //删除远程仓库 
+
+git tag -a v1.4 -m "my version 1.4"   //附注标签（会添加备注者信息）
+git tag v1.4                      //轻量标签
+git tag -a v1.2 9fceb02           //对过去的提交打标签
+git push origin <tagname>         //共享某个标签（标签默认保存本地，上传需要单独提交）
+git push origin --tags            //共享所有标签
+git tag -d v1.4                   //删除本地标签
+git push origin --delete <tagname> //删除远程标签
+git checkout 2.0.0                 //检出标签（有隐患）
+
+git config --global alias.unstage 'reset HEAD --'  //给 <reset HEAD -->添加别名<unstage>
+git config --global alias.visual '!gitk'           //给外部命令gitk添加别名visual
+
 git fetch <url>                   //获取远程仓库中所有分支的引用，可以合并或查看
 git push <url> <branch>           //将branch分支推送到url服务器
