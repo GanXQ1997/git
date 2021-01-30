@@ -48,3 +48,11 @@ git push <url> <branch>           //将branch分支推送到url服务器
 
 git branch testing                //创建分支
 git checkout testing              //切换分支
+git checkout -b hotfix            //创建并切换分支
+git branch -d hotfix              //删除分支
+git merge iss53                   //将分支iss53合并到当前分支（
+																		git status 命令来查看因合并冲突而处于未合并（unmerged）状态的文件
+																		Git 会暂存那些文件以表明冲突已解决
+git mergetool                     //选择合适的工具
+
+https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86
