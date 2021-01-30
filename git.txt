@@ -1,30 +1,33 @@
-git status             //获取文件的状态（未追踪，已改动，暂存等）（-s 简洁显示）
-git diff <file>        //查看file文件具体改动（git difftool切换比较软件）
-git add <file>         //追踪file（将file存入暂存区）
+git status                        //获取文件的状态（未追踪，已改动，暂存等）（-s 简洁显示）
+git diff <file>                   //查看file文件具体改动（git difftool切换比较软件）
+git add <file>                    //追踪file（将file存入暂存区）
 //可以创建一个名为 .gitignore 的文件，列出要忽略的文件
-git config             //修改默认配置
-git commit -m <"remarks">       //将暂存区文件提交到仓库（-a 工作区跳过暂存区提交）
-git rm <file>          //记录移除文件操作（-f 强制删除）
-git mv <old_file> <new_file>    //移动/重命名文件
-                                （相当于mv old_file new_file&&git rm old_file &&git add new_file)
-git config --global user.name "John Doe"       //配置用户名
+git config                        //修改默认配置
+git commit -m <"remarks">         //将暂存区文件提交到仓库（-a 工作区跳过暂存区提交）
+git rm <file>                     //记录移除文件操作（-f 强制删除）
+git mv <old_file> <new_file>      //移动/重命名文件
+                                  （相当于mv old_file new_file&&git rm old_file &&git add new_file)
+git config --global user.name "John Doe"             //配置用户名
 git config --global user.email johndoe@example.com   //配置邮箱
 git config -l  //查看所有配置
-git config --system --list //查看系统配置
-git config --global --list  //查看用户自己配置
+git config --system --list        //查看系统配置
+git config --global --list        //查看用户自己配置
 
-git remote add <name> <url>    //给url添加名称    
+git clone <dir>                   //克隆git版本库，从github复制不需要权限
+git log                           //查看版本历史 （-p 显示版本差异，-2 选项来只显示最近的两次提交，
+                                   --stat显示简略差异，--oneline一行显示版本历史，--graph显示分支与合并历史）
+q                                 //（END）退出
+git commit --amend                //提交撤销
+git reset HEAD <file>             //取消暂存
+git checkout -- <file>            //撤消对文件的修改（从暂存区还原）
+
+git remote                        //查看远程仓库
+git remote -v                     //查看实际链接地址
+git remote add <name> <url>       //给url添加简写
                                    （git@gihub.com:ganxq1997/temp.git ）                                                                                                    
                                    （ssh://arthur@192.168.1.202/home/arthur/FPGA/JNDZ105）
                                    （https://github.com/ganxq1997/temp）
-git clone <dir>      //克隆git版本库，从github复制不需要权限
-git log     //查看版本历史 （-p 显示版本差异，-2 选项来只显示最近的两次提交，
-              --stat显示简略差异，--oneline一行显示版本历史，--graph显示分支与合并历史）
-q           //（END）退出
-git commit --amend  //提交撤销
-git reset HEAD <file>  //取消暂存
-git checkout -- <file>  //撤消对文件的修改
-git remote -v     //查看实际链接地址
- 
-
- 
+git remote rename <oldname> <newname>   //将远程仓库oldname重命名为newname
+git remote rm <name>              //删除远程仓库 
+git fetch <url>                   //获取远程仓库中所有分支的引用，可以合并或查看
+git push <url> <branch>           //将branch分支推送到url服务器
