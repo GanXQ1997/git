@@ -46,6 +46,7 @@ git config --global alias.visual '!gitk'           //给外部命令gitk添加�
 git fetch <url>                   //获取远程仓库中所有分支的引用，可以合并或查看
 git push <url> <branch>           //将branch分支推送到url服务器
 
+git branch                        //查看已创建分支
 git branch testing                //创建分支
 git checkout testing              //切换分支
 git checkout -b hotfix            //创建并切换分支
@@ -53,6 +54,20 @@ git branch -d hotfix              //删除分支
 git merge iss53                   //将分支iss53合并到当前分支（
 																		git status 命令来查看因合并冲突而处于未合并（unmerged）状态的文件
 																		Git 会暂存那些文件以表明冲突已解决
+git branch -v                     //查看已创建分支的最后一次提交
+git branch --merged               //查看已经合并到当前分支的分支（--no-merged未合并）
 git mergetool                     //选择合适的工具
 
-https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86
+git fetch <url>                   //从远程仓库抓取本地没有的数据，并且更新本地数据库（同时跟踪远程分支）
+git push <remote> <branch0>:<branch1>       //推送本地分支branch0到远程仓库url的branch1分支
+git merge origin/serverfix         //将远程仓库origin的serverfix分支合并到本地当前分支
+git checkout -b serverfix origin/serverfix    //创建分支serverfix合并远程仓库origin的serverfix分支（注：当抓取到新的远程跟踪分支时，
+																								本地不会自动生成一份可编辑的副本（拷贝）。即不会有一个新的 serverfix 分支——只有一个不可以修改的
+																								origin/serverfix 指针，因此需要编辑时应运行git merge origin/serverfix合并到本地分支。）
+
+git checkout --track origin/serverfix        //创建分支serverfix合并远程仓库origin的serverfix分支
+git branch -u origin/serverfix               //设置跟踪的上游分支
+git branch -vv                               //查看设置的所有跟踪分支
+git fetch --all                              //抓取所有的远程仓库（与远程信息同步）
+git pull origin master                       //将远程主机origin的master分支拉取过来，与本地分支合并。（fetch+merge）
+git push origin --delete serverfix           //删除远程分支
