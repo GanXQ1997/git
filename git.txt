@@ -71,3 +71,11 @@ git branch -vv                               //查看设置的所有跟踪分支
 git fetch --all                              //抓取所有的远程仓库（与远程信息同步）
 git pull origin master                       //将远程主机origin的master分支拉取过来，与本地分支合并。（fetch+merge）
 git push origin --delete serverfix           //删除远程分支
+
+git rebase master                            //将当前分支变基到master分支上（再切到master分支合并该分支）
+git rebase master server                     //将server分支变基到目标分支master上
+git rebase --onto master server client       //选中在client分支里但不在server分支里的修改，将其在master分支上重放
+
+ssh-keygen -t rsa -C "youremail@example.com"      //生成ssh密钥
+
+
