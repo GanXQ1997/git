@@ -85,7 +85,10 @@ issue54..origin/master                       //语法是一个日志过滤器，
 git rebase -i HEAD~3                         //修改最后三次提交的历史
 //修改的每一次提交需将前面的 ‘pick’ 改为 ‘edit’
 //删除提交历史只需删除对应行 ‘pick f7f3f6d changed my name a bit’
+//合并提交需将前面的 ‘pick’ 改为 ‘squash’
 git rebase --continue                        //确认历史修改完成
 git push -f origin master                    //强制覆盖远程文件（慎用）
 
 git branch <branch0> <SH-a>                   //创建新分支branch0获取SH-a对应历史版本
+
+git rm -r --cached .                         //删除已追踪的文件，用于.gitignore忽略已追踪的文件
